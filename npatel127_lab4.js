@@ -1,7 +1,5 @@
 function init(){
     document.addEventListener('DOMContentLoaded', init);
-    document.getElementById("sec1-btn1").addEventListener("click", s1);
-    document.getElementById("sec2-btn1").addEventListener("click", s2);
 }
 
 // S E C T I O N  1
@@ -50,6 +48,30 @@ function s2(){
 }
 
 // S E C T I O N  3
+document.getElementById("sec3-btn1").addEventListener("click", s3);
+function s3(){
+    cel = document.getElementById("sec3-input").value;
+    if (cel != ""){
+        var celsius = parseFloat(cel);
+        if (isNaN(celsius)){
+            return alert("A non-numeric value was entered!")
+        }
+        else{
+            farenheit = (celsius * (9/5)) + 32;
+            document.getElementById("sec3-contentarea").innerHTML = celsius + " degrees celsius is equal to " + 
+            farenheit + " degrees fahrenheit.";
+            document.getElementById("sec3-input").value="";
+        }
+    }
+    else{
+        alert("No value has been entered!")
+    }
+}
+document.getElementById("sec3-btn2").addEventListener("click", s3_clearFunc);
+function s3_clearFunc() {
+    document.getElementById("sec3-contentarea").innerHTML = "";
+    document.getElementById("sec3-input").value="";
+}
 
 // S E C T I O N  4
 
